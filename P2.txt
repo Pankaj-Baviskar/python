@@ -1,0 +1,15 @@
+Aim: To accept N numbers from users. Compute and Display Maximum in list, Minimum in list, sum and Average of numbers.
+
+print('Enter Numbers: ',end='')
+numl = [int(i) for i in input().split()]
+
+print("Maximum:",max(numl))
+print("Minimum:",min(numl))
+print("Sum:",sum(numl))
+print("Average:",sum(numl)/len(numl))
+
+Enter Numbers: 50 80 90 20 65
+Maximum: 90
+Minimum: 20
+Sum: 305
+Average: 61.0
