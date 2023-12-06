@@ -1,0 +1,95 @@
+Aim:  Create class EMPLOYEE for storing details (Name, Designation, gender, Date of Joining and Salary). Define function members to compute a)total number of employees in an organization b) count of male and female employee c) Employee with salary more than 10,000 d) Employee with designation “Asst Manager”.
+
+Source code:
+class Employee:
+    totalEmployee = 0
+    males = 0
+    females = 0
+
+    def __init__(self, name, designation, gender, doj, salary):
+        self.name = name
+        self.designation = designation
+        self._gender = gender
+        self.doj = doj
+        self._salary = salary
+        Employee.totalEmployee += 1
+        if self._gender == 'M':
+            Employee.males += 1
+        else:
+            Employee.females += 1
+
+    def total():
+        return Employee.totalEmployee
+    
+    def gender():
+        print('Males:', Employee.males)
+        print('Females:', Employee.females)
+
+    def salary(self):
+        return self._salary
+
+    def isAsstManager(self):
+        return self.designation == "Asst Manager"
+
+emplist = []
+
+while True:
+    emplist.append(Employee(input('\nEnter Name: '),input('Enter Post: '),input('Enter Gender: '),input('Enter Joining Date: '),int(input('Enter Salary: '))))
+    ch = input('You want to add more? Y/N ').upper()
+    if ch == 'N':
+        print()
+        break
+
+# Total number of employees
+print("Total number of employees:", Employee.total())
+# Gender count
+Employee.gender()
+
+for emp in emplist:
+    # Employees with salary more than 10,000
+    print("\nEmployees with salary more than 10,000:")
+    if emp.salary()> 10000:
+        print(emp.name)
+    # Employees with designation “Asst Manager”
+    print("Employees with designation 'Asst Manager':")
+    if emp.isAsstManager():
+        print(emp.name)
+
+
+OUTPUT 
+Enter Name: Dhaneshwar Prasad
+Enter Post: ass manager
+Enter Gender: M
+Enter Joining Date: 22-06-2021
+Enter Salary: 50000
+You want to add more? Y/N y
+
+Enter Name: Rohan Salunkhe
+Enter Post: Manager
+Enter Gender: M
+Enter Joining Date: 26-03-2018
+Enter Salary: 75000
+You want to add more? Y/N y
+
+Enter Name: Arsheen Shaikh
+Enter Post: CEO
+Enter Gender: F
+Enter Joining Date: 13-02-2015
+Enter Salary: 100000
+You want to add more? Y/N n
+
+Total number of employees: 3
+Males: 2
+Females: 1
+
+Employees with salary more than 10,000:
+Dhaneshwar Prasad
+Employees with designation 'Asst Manager':
+
+Employees with salary more than 10,000:
+Rohan Salunkhe
+Employees with designation 'Asst Manager':
+
+Employees with salary more than 10,000:
+Arsheen Shaikh
+Employees with designation 'Asst Manager':
