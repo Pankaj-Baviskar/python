@@ -1,0 +1,8 @@
+num1 = int(input('Enter Number 1: '))
+num2 = int(input('Enter Number 2: '))
+num3 = int(input('Enter Number 3: '))
+
+if(num1==num2==num3):
+    print("3X times sum of numbers: ",(num1+num2+num3)*3)
+else:
+    print("Sum of numbers:",num1+num2+num3)
