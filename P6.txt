@@ -1,0 +1,36 @@
+Aim: To accept two numbers from the user and compute the smallest divisor and Greatest Common Divisor of these two numbers.
+
+Source code:
+
+num1 = int(input("Enter an first Number:"))
+num2 = int(input("Enter an second Number:"))
+a=[]
+
+def sd(x):
+    a=[]
+    for i in range(2,x+1):
+        if(x%i==0):
+            a.append(i)
+    a.sort()
+    return a[0]
+print(f'Smallest divisor of {num1} is: {sd(num1)}')
+print(f'Smallest divisor of {num2} is: {sd(num2)}')
+
+def gcd(a, b):
+    if(b == 0):
+        return abs(a)
+    else:
+        return gcd(b, a % b)
+
+print(f'The gcd of {num1} and {num2} is : {gcd(num1, num2)}')
+
+
+
+
+OUTPUT 
+
+Enter an first Number:15
+Enter an second Number:12
+Smallest divisor of 15 is: 3
+Smallest divisor of 12 is: 2
+The gcd of 15 and 12 is : 3
