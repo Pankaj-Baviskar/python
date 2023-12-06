@@ -1,0 +1,74 @@
+Aim:  Create class STORE to keep track of Products ( Product Code, Name and price). Display menu of all products to user. Generate bill as per.
+
+
+Source code:
+class Product:
+    def __init__(self, code, name, price):
+        self.code = code
+        self.name = name
+        self.price = price
+
+class Store:
+    def __init__(self):
+        self.products = []
+
+    def add_product(self, product):
+        # Add a product to the store.
+        self.products.append(product)
+
+    def display_menu(self):
+        # Display the list of products in the store.
+        print(f"{'Product Code':<20} {'Product Name':<20} {'Price':<20}")
+        for product in self.products:
+            print(f"{product.code:<20} {product.name:<20} {product.price:<20}")
+
+    def generate_bill(self, selected_products):
+        # Generate a bill for the selected products.
+        total_price = 0
+        print()
+        print(f"{'*** Bill ***':^50}")
+        print(f"{'Product Code':<20} {'Product Name':<20} {'Price':<20}")
+        for code in selected_products:
+            product = next((p for p in self.products if p.code == code), None)
+            if product:
+                print(f"{product.code:<20} {product.name:<20} {product.price:<20}")
+                total_price += product.price
+            else:
+                print(f"Product with code {code} not found.")
+        print("\nTotal Price: ", total_price)
+
+# Example usage:
+if __name__ == "__main__":
+    # Creating a store and adding products
+    store = Store()
+    store.add_product(Product("P1", "Laptop", 800))
+    store.add_product(Product("P2", "Mouse", 20))
+    store.add_product(Product("P3", "Keyboard", 50))
+    store.add_product(Product("P4", "Headphones", 100))
+
+    # Displaying the menu
+    store.display_menu()
+
+    # Taking user input for selected products
+    selected_products = input("\nEnter product codes (comma-separated) to generate the bill: ").upper().split(",")
+
+    # Generating the bill
+    store.generate_bill(selected_products)
+
+
+
+OUTPUT 
+Product Code         Product Name         Price
+P1                   	Laptop               	800
+P2                   	Mouse                	20
+P3                   	Keyboard             	50
+P4                   	Headphones          100
+
+Enter product codes (comma-separated) to generate the bill: P1,P3
+
+                   *** Bill ***
+Product Code         Product Name         Price
+P1                   	Laptop               	800
+P3                  	Keyboard             	50
+
+Total Price:  850
