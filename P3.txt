@@ -1,0 +1,42 @@
+Aim: To accept a student‟s five courses marks and compute his/her result. 
+Student is passing if he/she scores marks equal to and above 40 in each course. 
+If student scores aggregate greater than 75%, then the grade is distinction. 
+If aggregate is 60>= and <75 then the grade if first division. 
+If aggregate is 50>= and <60, then the grade is second division. 
+If aggregate is 40>= and <50, then the grade is third division.
+
+
+name = input('Enter Your Name: ')
+roll = input('Enter Your Roll No: ')
+DMS = int(input('\nEnter Marks of DMS: '))
+DSA = int(input('Enter Marks of DSA: '))
+SEPM = int(input('Enter Marks of SEPM: '))
+OOPs = int(input('Enter Marks of OOPs: '))
+ISEE = int(input('Enter Marks of ISEE: '))
+
+print(f'\nName: {name}')
+print(f'Roll No: {roll}')
+print("\nSub.\t T.Marks\t Ob.Marks")
+print(f"DMS\t 100\t\t {DMS}")
+print(f"DSA\t 100\t\t {DSA}")
+print(f"SEPM\t 100\t\t {SEPM}")
+print(f"OOPs\t 100\t\t {OOPs}")
+print(f"ISEE\t 100\t\t {ISEE}\n\n")
+
+total = DMS+DSA+SEPM+OOPs+ISEE
+print(f'Total: 500\nObtained: {total}')
+
+
+
+
+if(DMS>=40 and DSA>=40 and SEPM>=40 and OOPs>=40 and ISEE>=40):
+    avg=total/5
+    print(f'Percentage: {avg}')
+    if(avg>=75):
+        print('Grade: Distinction')
+    elif(avg>=60):
+        print('Grade: First Division')
+    elif(avg>=50):
+        print('Grade: Second Division')
+    elif(avg>=40):
+        print('Grade: Third Division')
