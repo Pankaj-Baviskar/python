@@ -1,0 +1,15 @@
+Aim: Write a Python program which accepts a sequence of comma-separated numbers from the user and generates a list and a tuple with those numbers.
+
+Source code:
+print('Enter comma-separated numbers: ',end='')
+nlist = [int(i) for i in input().split(',')]
+ntup = tuple(nlist)
+print(f'List of Numbers: {nlist}')
+print(f'Tuple of Numbers: {ntup}')
+
+
+OUTPUT 
+
+Enter comma-separated numbers: 10,20,30,40,50
+List of Numbers: [10, 20, 30, 40, 50]
+Tuple of Numbers: (10, 20, 30, 40, 50)
