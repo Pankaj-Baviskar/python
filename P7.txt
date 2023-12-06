@@ -1,0 +1,20 @@
+Aim: To accept a list of N integers and partition list into two sublists of even and odd numbers.
+
+Source code:
+print('Enter List Elements: ',end='')
+numl = [int(i) for i in input().split()]
+even = [i for i in numl if i%2==0]
+odd = [i for i in numl if i%2!=0]
+
+print(f'Original List: {numl}')
+print(f'Even Number List: {even}')
+print(f'Odd Number List: {odd}')
+
+
+
+OUTPUT 
+
+Enter List Elements: 5 3 8 6 9 71
+Original List: [5, 3, 8, 6, 9, 71]
+Even Number List: [8, 6]
+Odd Number List: [5, 3, 9, 71]
