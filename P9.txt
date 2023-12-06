@@ -1,0 +1,32 @@
+Aim:  Write a Python program to get a directory listing, sorted by creation date.
+Source code:
+import os
+import time
+
+def get_directory(directory_path):
+    files = []
+    for entry in os.scandir(directory_path):
+        if entry.is_file():
+            files.append((entry.stat(follow_symlinks=False).st_ctime, entry.name))
+
+    sorted_files = sorted(files, key=lambda x: x[0])
+    return [os.path.join(directory_path, filename) for _, filename in sorted_files]
+
+if __name__ == "__main__":
+    directory_path = "D:\\C & C++\\oop"
+    # directory_path = os.getcwd()
+    sorted_listing = get_directory(directory_path)
+    for filename in sorted_listing:
+        print(filename)
+
+OUTPUT 
+D:\C & C++\oop\P1.cpp
+D:\C & C++\oop\P2.cpp
+D:\C & C++\oop\P2.exe
+D:\C & C++\oop\P3.cpp
+D:\C & C++\oop\P3.exe
+D:\C & C++\oop\P4.cpp
+D:\C & C++\oop\P4.exe
+D:\C & C++\oop\P1.exe
+D:\C & C++\oop\OOP practicals.pdf
+D:\C & C++\oop\test.py
